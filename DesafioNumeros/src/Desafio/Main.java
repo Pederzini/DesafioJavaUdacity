@@ -1,12 +1,11 @@
 package Desafio;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
-    ArrayList<Integer> listaAleatorios = new ArrayList<Integer>();
+    ArrayList<Integer> listaAleatorios = new ArrayList<>();
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -35,38 +34,48 @@ public class Main {
         int escolha = inputEscolha.nextInt();
 
         switch (escolha) {
-            case 1 : main.adivinharNumero();
+            case 1:
+                main.adivinharNumero();
                 break;
-            case 2 : main.somar10();
+            case 2:
+                main.somar10();
                 break;
-            case 3 : main.subtrair10();
+            case 3:
+                main.subtrair10();
                 break;
-            case 4 : main.adivinharPrimeiro();
+            case 4:
+                main.adivinharPrimeiro();
                 break;
-            case 5 : main.multiplicarPares();
+            case 5:
+                main.multiplicarPares();
                 break;
-            case 6 : main.multiplicarImpares();
+            case 6:
+                main.multiplicarImpares();
                 break;
-            case 7 : main.ordenarListaAsc();
+            case 7:
+                main.ordenarListaAsc();
                 break;
-            case 8 : main.embaralharLista();
+            case 8:
+                main.embaralharLista();
                 break;
-            case 9 : main.tabuada5Primeiros();
+            case 9:
+                main.tabuada5Primeiros();
                 break;
-            case 10 : main.somarTodos();
+            case 10:
+                main.somarTodos();
                 break;
-            case 0 : main.sair();
+            case 0:
+                main.sair();
                 break;
         }
     }
 
     public static int numAleatorio() {
-        int aleatorio = (int) ((Math.random()*51)+1);
-        return aleatorio;
+        return (int) ((Math.random() * 51) + 1);
     }
 
     public ArrayList<Integer> preencherLista() {
-        for(int i=0; i<20; i++){
+        for (int i = 0; i < 20; i++) {
             numAleatorio();
             listaAleatorios.add(numAleatorio());
         }
@@ -74,10 +83,10 @@ public class Main {
     }
 
     public void mostrarLista() {
-        for(int i=0; i<20; i++){
-            if(i==0) {
+        for (int i = 0; i < 20; i++) {
+            if (i == 0) {
                 System.out.print("[" + listaAleatorios.get(i) + ", ");
-            } else if (i<19) {
+            } else if (i < 19) {
                 System.out.print(listaAleatorios.get(i) + ", ");
             } else {
                 System.out.println(listaAleatorios.get(i) + "]");
@@ -89,31 +98,30 @@ public class Main {
         try {
             Double.parseDouble(str);
             return true;
-        } catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
 
-    public String entradaNome() {
+    public void entradaNome() {
         boolean errado = true;
-        String nome = "";
-        while(errado) {
+        String nome;
+        while (errado) {
             System.out.println("Digite seu nome:");
             Scanner inputNome = new Scanner(System.in);
             nome = inputNome.nextLine();
-            if(isNumeric(nome)) {
+            if (isNumeric(nome)) {
                 System.out.println("Por favor, não utilize números!");
             } else {
                 errado = false;
             }
         }
-        return nome;
     }
 
-    public int entradaIdade() {
+    public void entradaIdade() {
         boolean errado = true;
-        int idade = 0;
-        while(errado) {
+        int idade;
+        while (errado) {
             try {
                 System.out.println("Digite sua idade:");
                 Scanner inputIdade = new Scanner(System.in);
@@ -124,13 +132,12 @@ public class Main {
                 errado = true;
             }
         }
-        return idade;
     }
 
     public void adivinharNumero() {
         boolean errado = true;
         int adivinha = 0;
-        while(errado) {
+        while (errado) {
             try {
                 System.out.println("Digite um número entre 1 e 50 que você acha que foi sorteado:");
                 Scanner inputAdivinha = new Scanner(System.in);
@@ -141,7 +148,7 @@ public class Main {
                 errado = true;
             }
         }
-        if(listaAleatorios.contains(adivinha)) {
+        if (listaAleatorios.contains(adivinha)) {
             System.out.println("Parabéns, você adivinhou um número que foi sorteado!");
             System.out.println("Ele está na posição " + listaAleatorios.indexOf(adivinha));
         } else {
@@ -152,10 +159,10 @@ public class Main {
     public void somar10() {
         System.out.println("Números sorteados: ");
         mostrarLista();
-        System.out.println("");
-        int i=0;
+        System.out.println();
+        int i = 0;
         int soma = 0;
-        while(i<10) {
+        while (i < 10) {
             soma += listaAleatorios.get(i);
             i++;
         }
@@ -165,10 +172,10 @@ public class Main {
     public void subtrair10() {
         System.out.println("Números sorteados: ");
         mostrarLista();
-        System.out.println("");
+        System.out.println();
         int subtracao = 0;
-        for(int i=0; i<10; i++) {
-            if (i==0) {
+        for (int i = 0; i < 10; i++) {
+            if (i == 0) {
                 subtracao = listaAleatorios.get(i);
             } else {
                 subtracao -= listaAleatorios.get(i);
@@ -178,10 +185,10 @@ public class Main {
     }
 
     public void adivinharPrimeiro() {
-        boolean errado = true;
+        boolean errado;
         int tentativas = 5;
         int adivinha = 0;
-        while(tentativas > 0) {
+        while (tentativas > 0) {
             errado = true;
             while (errado) {
                 try {
@@ -195,7 +202,7 @@ public class Main {
                 }
             }
             tentativas--;
-            if(adivinha == listaAleatorios.get(0)){
+            if (adivinha == listaAleatorios.get(0)) {
                 System.out.println("Parabéns, você acertou o primeiro número da lista!\n" +
                         "Você realmente tem muita sorte!!");
             } else {
@@ -206,19 +213,19 @@ public class Main {
 
     public void multiplicarPares() {
         long multiplicacao = 1;
-        for(int i=0; i<listaAleatorios.size(); i++) {
-           if(listaAleatorios.get(i) % 2 == 0){
-               multiplicacao *= listaAleatorios.get(i);
-           }
+        for (Integer x : listaAleatorios) {
+            if (x % 2 == 0) {
+                multiplicacao *= x;
+            }
         }
         System.out.println("O resultado da multiplicação entre os números pares é: " + multiplicacao);
     }
 
     public void multiplicarImpares() {
         long multiplicacao = 1;
-        int i=0;
-        while(i < listaAleatorios.size()) {
-            if(listaAleatorios.get(i) % 2 != 0) {
+        int i = 0;
+        while (i < listaAleatorios.size()) {
+            if (listaAleatorios.get(i) % 2 != 0) {
                 System.out.println(listaAleatorios.get(i));
                 multiplicacao *= listaAleatorios.get(i);
             }
@@ -227,9 +234,12 @@ public class Main {
         System.out.println("O resultado da multiplicação entre os números ímpares é: " + multiplicacao);
     }
 
-    public ArrayList<Integer> ordenarListaAsc() {
-        System.out.println("Em produção");
-        return preencherLista();
+    public void ordenarListaAsc() {
+        System.out.println("Lista não ordenada:");
+        System.out.println(listaAleatorios);
+        Collections.sort(listaAleatorios);
+        System.out.println("Lista ordenada:");
+        System.out.println(listaAleatorios);
     }
 
     public ArrayList<Integer> embaralharLista() {
@@ -245,11 +255,11 @@ public class Main {
     public void somarTodos() {
         System.out.println("Números sorteados: ");
         mostrarLista();
-        System.out.println("");
+        System.out.println();
         int soma = 0;
         // for-each, diferente do for tradicional
         // usado quando quero usar TODOS os itens da lista
-        for(int i : listaAleatorios){
+        for (int i : listaAleatorios) {
             soma += i;
         }
         System.out.println("A soma de todos os números é: " + soma);
