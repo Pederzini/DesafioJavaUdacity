@@ -144,6 +144,8 @@ public class Main {
         if(listaAleatorios.contains(adivinha)) {
             System.out.println("Parabéns, você adivinhou um número que foi sorteado!");
             System.out.println("Ele está na posição " + listaAleatorios.indexOf(adivinha));
+        } else {
+            System.out.println("Poxa, você não adivinhou :(");
         }
     }
 
@@ -175,19 +177,54 @@ public class Main {
         System.out.println("A subtração dos 10 primeiros números é: " + subtracao);
     }
 
-    public boolean adivinharPrimeiro() {
-        System.out.println("Em produção");
-        return false;
+    public void adivinharPrimeiro() {
+        boolean errado = true;
+        int tentativas = 5;
+        int adivinha = 0;
+        while(tentativas > 0) {
+            errado = true;
+            while (errado) {
+                try {
+                    System.out.println("Digite um número entre 1 e 50 que você acha que foi o PRIMEIRO sorteado:");
+                    Scanner inputAdivinha = new Scanner(System.in);
+                    adivinha = inputAdivinha.nextInt();
+                    errado = false;
+                } catch (Exception e) {
+                    System.out.println("Por favor, não utilize letras!");
+                    errado = true;
+                }
+            }
+            tentativas--;
+            if(adivinha == listaAleatorios.get(0)){
+                System.out.println("Parabéns, você acertou o primeiro número da lista!\n" +
+                        "Você realmente tem muita sorte!!");
+            } else {
+                System.out.println("Poxa, não acertou :( Você ainda tem " + tentativas + " tentativas!");
+            }
+        }
     }
 
-    public int multiplicarPares() {
-        System.out.println("Em produção");
-        return 0;
+    public void multiplicarPares() {
+        long multiplicacao = 1;
+        for(int i=0; i<listaAleatorios.size(); i++) {
+           if(listaAleatorios.get(i) % 2 == 0){
+               multiplicacao *= listaAleatorios.get(i);
+           }
+        }
+        System.out.println("O resultado da multiplicação entre os números pares é: " + multiplicacao);
     }
 
-    public int multiplicarImpares() {
-        System.out.println("Em produção");
-        return 0;
+    public void multiplicarImpares() {
+        long multiplicacao = 1;
+        int i=0;
+        while(i < listaAleatorios.size()) {
+            if(listaAleatorios.get(i) % 2 != 0) {
+                System.out.println(listaAleatorios.get(i));
+                multiplicacao *= listaAleatorios.get(i);
+            }
+            i++;
+        }
+        System.out.println("O resultado da multiplicação entre os números ímpares é: " + multiplicacao);
     }
 
     public ArrayList<Integer> ordenarListaAsc() {
