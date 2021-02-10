@@ -12,8 +12,10 @@ public class Main {
         Main main = new Main();
         main.entradaNome();
         main.entradaIdade();
-        System.out.println("Vamos jogar! Este programa sorteará 20 números aleatórios entre" +
-                "1 e 50. Você decidirá o que fazer com eles no menu abaixo.");
+        System.out.println("Vamos jogar! Este programa sorteou 20 números aleatórios entre 1 e 50:");
+        main.preencherLista();
+        main.mostrarLista();
+        System.out.println("Você decidirá o que fazer com eles no menu abaixo");
         System.out.println("-------------------------------------------");
         System.out.println("Opções disponíveis:");
         System.out.println("1) Adivinhar se existe um número na lista");
@@ -29,7 +31,6 @@ public class Main {
         System.out.println("0) Sair");
         System.out.println("-------------------------------------------");
         System.out.println("Digite o número da opção desejada:");
-        System.out.println("lalala");
         Scanner inputEscolha = new Scanner(System.in);
         int escolha = inputEscolha.nextInt();
 
@@ -65,11 +66,14 @@ public class Main {
     }
 
     public ArrayList<Integer> preencherLista() {
-
         for(int i=0; i<20; i++){
             numAleatorio();
             listaAleatorios.add(numAleatorio());
         }
+        return listaAleatorios;
+    }
+
+    public void mostrarLista() {
         for(int i=0; i<20; i++){
             if(i==0) {
                 System.out.print("[" + listaAleatorios.get(i) + ", ");
@@ -79,7 +83,6 @@ public class Main {
                 System.out.println(listaAleatorios.get(i) + "]");
             }
         }
-        return listaAleatorios;
     }
 
     public static boolean isNumeric(String str) {
@@ -129,9 +132,17 @@ public class Main {
         return false;
     }
 
-    public int somar10() {
-        System.out.println("Em produção");
-        return 0;
+    public void somar10() {
+        System.out.println("Números sorteados: ");
+        mostrarLista();
+        System.out.println("");
+        int i=0;
+        int soma = 0;
+        while(i<10) {
+            soma += listaAleatorios.get(i);
+            i++;
+        }
+        System.out.println("A soma dos 10 primeiros números é: " + soma);
     }
 
     public int subtrair10() {
@@ -170,10 +181,13 @@ public class Main {
     }
 
     public void somarTodos() {
+        System.out.println("Números sorteados: ");
+        mostrarLista();
+        System.out.println("");
         int soma = 0;
         // for-each, diferente do for tradicional
         // usado quando quero usar TODOS os itens da lista
-        for(int i : preencherLista()){
+        for(int i : listaAleatorios){
             soma += i;
         }
         System.out.println("A soma de todos os números é: " + soma);
