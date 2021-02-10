@@ -205,7 +205,7 @@ public class Main {
     }
 
     public void multiplicarPares() {
-        int multiplicacao = 1;
+        long multiplicacao = 1;
         for(int i=0; i<listaAleatorios.size(); i++) {
            if(listaAleatorios.get(i) % 2 == 0){
                multiplicacao *= listaAleatorios.get(i);
