@@ -242,9 +242,12 @@ public class Main {
         System.out.println(listaAleatorios);
     }
 
-    public ArrayList<Integer> embaralharLista() {
-        System.out.println("Em produção");
-        return preencherLista();
+    public void embaralharLista() {
+        System.out.println("Lista inicial:");
+        System.out.println(listaAleatorios);
+        Collections.shuffle(listaAleatorios);
+        System.out.println("Lista randomizada:");
+        System.out.println(listaAleatorios);
     }
 
     public String tabuada5Primeiros() {
