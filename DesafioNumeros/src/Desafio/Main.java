@@ -6,12 +6,15 @@ import java.util.Scanner;
 
 public class Main {
     ArrayList<Integer> listaAleatorios = new ArrayList<>();
+    String nome;
+    int idade;
 
     public static void main(String[] args) {
         Main main = new Main();
         main.entradaNome();
         main.entradaIdade();
-        System.out.println("Vamos jogar! Este programa sorteou 20 números aleatórios entre 1 e 50:");
+        System.out.println("Bem vindo(a), " + main.nome + "! Vi aqui que você tem " + main.idade + " anos.");
+        System.out.println("Vamos jogar? Este programa sorteou 20 números aleatórios entre 1 e 50:");
         main.preencherLista();
         main.mostrarLista();
         System.out.println("Você decidirá o que fazer com eles no menu abaixo");
@@ -74,12 +77,11 @@ public class Main {
         return (int) ((Math.random() * 51) + 1);
     }
 
-    public ArrayList<Integer> preencherLista() {
+    public void preencherLista() {
         for (int i = 0; i < 20; i++) {
             numAleatorio();
             listaAleatorios.add(numAleatorio());
         }
-        return listaAleatorios;
     }
 
     public void mostrarLista() {
@@ -105,7 +107,6 @@ public class Main {
 
     public void entradaNome() {
         boolean errado = true;
-        String nome;
         while (errado) {
             System.out.println("Digite seu nome:");
             Scanner inputNome = new Scanner(System.in);
@@ -120,7 +121,6 @@ public class Main {
 
     public void entradaIdade() {
         boolean errado = true;
-        int idade;
         while (errado) {
             try {
                 System.out.println("Digite sua idade:");
@@ -253,7 +253,7 @@ public class Main {
     public void tabuada5Primeiros() {
         for(int i=0; i<5; i++) {
             System.out.println("Tabuada do número " + listaAleatorios.get(i) + ":");
-            System.out.println(listaAleatorios.get(i) + " X 1 = " + (listaAleatorios.get(i)*1));
+            System.out.println(listaAleatorios.get(i) + " X 1 = " + (listaAleatorios.get(i)));
             System.out.println(listaAleatorios.get(i) + " X 2 = " + (listaAleatorios.get(i)*2));
             System.out.println(listaAleatorios.get(i) + " X 3 = " + (listaAleatorios.get(i)*3));
             System.out.println(listaAleatorios.get(i) + " X 4 = " + (listaAleatorios.get(i)*4));
@@ -281,7 +281,7 @@ public class Main {
     }
 
     public void sair() {
-        System.out.println("Obrigado por jogar!");
+        System.out.println("Obrigado por jogar, " + nome);
     }
 
 }
