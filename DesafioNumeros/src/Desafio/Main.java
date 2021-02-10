@@ -204,9 +204,15 @@ public class Main {
         }
     }
 
-    public int multiplicarPares() {
-        System.out.println("Em produção");
-        return 0;
+    public void multiplicarPares() {
+        int multiplicacao = 1;
+        for(int i=0; i<listaAleatorios.size(); i++) {
+           if(listaAleatorios.get(i) % 2 == 0){
+               System.out.println(listaAleatorios.get(i));
+               multiplicacao *= listaAleatorios.get(i);
+           }
+        }
+        System.out.println("O resultado da multiplicação entre os números pares é: " + multiplicacao);
     }
 
     public int multiplicarImpares() {
