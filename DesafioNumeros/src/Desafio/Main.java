@@ -127,9 +127,24 @@ public class Main {
         return idade;
     }
 
-    public boolean adivinharNumero() {
-        System.out.println("Em produção");
-        return false;
+    public void adivinharNumero() {
+        boolean errado = true;
+        int adivinha = 0;
+        while(errado) {
+            try {
+                System.out.println("Digite um número entre 1 e 50 que você acha que foi sorteado:");
+                Scanner inputAdivinha = new Scanner(System.in);
+                adivinha = inputAdivinha.nextInt();
+                errado = false;
+            } catch (Exception e) {
+                System.out.println("Por favor, não utilize letras!");
+                errado = true;
+            }
+        }
+        if(listaAleatorios.contains(adivinha)) {
+            System.out.println("Parabéns, você adivinhou um número que foi sorteado!");
+            System.out.println("Ele está na posição " + listaAleatorios.indexOf(adivinha));
+        }
     }
 
     public void somar10() {
