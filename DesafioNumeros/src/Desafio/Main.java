@@ -13,63 +13,67 @@ public class Main {
         Main main = new Main();
         main.entradaNome();
         main.entradaIdade();
-        System.out.println("Bem vindo(a), " + main.nome + "! Vi aqui que você tem " + main.idade + " anos.");
-        System.out.println("Vamos jogar? Este programa sorteou 20 números aleatórios entre 1 e 50:");
-        main.preencherLista();
-        main.mostrarLista();
-        System.out.println("Você decidirá o que fazer com eles no menu abaixo");
-        System.out.println("-------------------------------------------");
-        System.out.println("Opções disponíveis:");
-        System.out.println("1) Adivinhar se existe um número na lista");
-        System.out.println("2) Somar os 10 primeiros");
-        System.out.println("3) Subtrair os 10 primeiros");
-        System.out.println("4) Adivinhar o 1° número");
-        System.out.println("5) Multiplicar os pares");
-        System.out.println("6) Multiplicar os ímpares");
-        System.out.println("7) Ordenar lista -> menor para o maior");
-        System.out.println("8) Embaralhar lista -> randomizar");
-        System.out.println("9) Criar tabuada com os 5 primeiros números");
-        System.out.println("10) Somar todos os números");
-        System.out.println("0) Sair");
-        System.out.println("-------------------------------------------");
-        System.out.println("Digite o número da opção desejada:");
-        Scanner inputEscolha = new Scanner(System.in);
-        int escolha = inputEscolha.nextInt();
+        int aux = 1;
+        while(aux != 0) {
+            System.out.println("Bem vindo(a), " + main.nome + "! Vi aqui que você tem " + main.idade + " anos.");
+            System.out.println("Vamos jogar? Este programa sorteou 20 números aleatórios entre 1 e 50:");
+            main.preencherLista();
+            main.mostrarLista();
+            System.out.println("Você decidirá o que fazer com eles no menu abaixo");
+            System.out.println("-------------------------------------------");
+            System.out.println("Opções disponíveis:");
+            System.out.println("1) Adivinhar se existe um número na lista");
+            System.out.println("2) Somar os 10 primeiros");
+            System.out.println("3) Subtrair os 10 primeiros");
+            System.out.println("4) Adivinhar o 1° número");
+            System.out.println("5) Multiplicar os pares");
+            System.out.println("6) Multiplicar os ímpares");
+            System.out.println("7) Ordenar lista -> menor para o maior");
+            System.out.println("8) Embaralhar lista -> randomizar");
+            System.out.println("9) Criar tabuada com os 5 primeiros números");
+            System.out.println("10) Somar todos os números");
+            System.out.println("0) Sair");
+            System.out.println("-------------------------------------------");
+            System.out.println("Digite o número da opção desejada:");
+            Scanner inputEscolha = new Scanner(System.in);
+            int escolha = inputEscolha.nextInt();
 
-        switch (escolha) {
-            case 1:
-                main.adivinharNumero();
-                break;
-            case 2:
-                main.somar10();
-                break;
-            case 3:
-                main.subtrair10();
-                break;
-            case 4:
-                main.adivinharPrimeiro();
-                break;
-            case 5:
-                main.multiplicarPares();
-                break;
-            case 6:
-                main.multiplicarImpares();
-                break;
-            case 7:
-                main.ordenarListaAsc();
-                break;
-            case 8:
-                main.embaralharLista();
-                break;
-            case 9:
-                main.tabuada5Primeiros();
-                break;
-            case 10:
-                main.somarTodos();
-                break;
-            case 0:
-                main.sair();
-                break;
+            switch (escolha) {
+                case 1:
+                    main.adivinharNumero();
+                    break;
+                case 2:
+                    main.somar10();
+                    break;
+                case 3:
+                    main.subtrair10();
+                    break;
+                case 4:
+                    main.adivinharPrimeiro();
+                    break;
+                case 5:
+                    main.multiplicarPares();
+                    break;
+                case 6:
+                    main.multiplicarImpares();
+                    break;
+                case 7:
+                    main.ordenarListaAsc();
+                    break;
+                case 8:
+                    main.embaralharLista();
+                    break;
+                case 9:
+                    main.tabuada5Primeiros();
+                    break;
+                case 10:
+                    main.somarTodos();
+                    break;
+                case 0:
+                    main.sair();
+                    aux = 0;
+                    break;
+            }
         }
     }
 
