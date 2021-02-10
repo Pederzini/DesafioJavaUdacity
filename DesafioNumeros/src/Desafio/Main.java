@@ -145,9 +145,19 @@ public class Main {
         System.out.println("A soma dos 10 primeiros números é: " + soma);
     }
 
-    public int subtrair10() {
-        System.out.println("Em produção");
-        return 0;
+    public void subtrair10() {
+        System.out.println("Números sorteados: ");
+        mostrarLista();
+        System.out.println("");
+        int subtracao = 0;
+        for(int i=0; i<10; i++) {
+            if (i==0) {
+                subtracao = listaAleatorios.get(i);
+            } else {
+                subtracao -= listaAleatorios.get(i);
+            }
+        }
+        System.out.println("A subtração dos 10 primeiros números é: " + subtracao);
     }
 
     public boolean adivinharPrimeiro() {
