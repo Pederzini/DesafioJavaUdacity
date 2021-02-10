@@ -14,7 +14,7 @@ public class Main {
         main.entradaNome();
         main.entradaIdade();
         int aux = 1;
-        while(aux != 0) {
+        while (aux != 0) {
             System.out.println("Bem vindo(a), " + main.nome + "! Vi aqui que você tem " + main.idade + " anos.");
             System.out.println("Vamos jogar? Este programa sorteou 20 números aleatórios entre 1 e 50:");
             main.preencherLista();
@@ -255,17 +255,17 @@ public class Main {
     }
 
     public void tabuada5Primeiros() {
-        for(int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("Tabuada do número " + listaAleatorios.get(i) + ":");
             System.out.println(listaAleatorios.get(i) + " X 1 = " + (listaAleatorios.get(i)));
-            System.out.println(listaAleatorios.get(i) + " X 2 = " + (listaAleatorios.get(i)*2));
-            System.out.println(listaAleatorios.get(i) + " X 3 = " + (listaAleatorios.get(i)*3));
-            System.out.println(listaAleatorios.get(i) + " X 4 = " + (listaAleatorios.get(i)*4));
-            System.out.println(listaAleatorios.get(i) + " X 5 = " + (listaAleatorios.get(i)*5));
-            System.out.println(listaAleatorios.get(i) + " X 6 = " + (listaAleatorios.get(i)*6));
-            System.out.println(listaAleatorios.get(i) + " X 7 = " + (listaAleatorios.get(i)*7));
-            System.out.println(listaAleatorios.get(i) + " X 8 = " + (listaAleatorios.get(i)*8));
-            System.out.println(listaAleatorios.get(i) + " X 9 = " + (listaAleatorios.get(i)*9));
+            System.out.println(listaAleatorios.get(i) + " X 2 = " + (listaAleatorios.get(i) * 2));
+            System.out.println(listaAleatorios.get(i) + " X 3 = " + (listaAleatorios.get(i) * 3));
+            System.out.println(listaAleatorios.get(i) + " X 4 = " + (listaAleatorios.get(i) * 4));
+            System.out.println(listaAleatorios.get(i) + " X 5 = " + (listaAleatorios.get(i) * 5));
+            System.out.println(listaAleatorios.get(i) + " X 6 = " + (listaAleatorios.get(i) * 6));
+            System.out.println(listaAleatorios.get(i) + " X 7 = " + (listaAleatorios.get(i) * 7));
+            System.out.println(listaAleatorios.get(i) + " X 8 = " + (listaAleatorios.get(i) * 8));
+            System.out.println(listaAleatorios.get(i) + " X 9 = " + (listaAleatorios.get(i) * 9));
             System.out.println("-------------------------------------------------------");
             System.out.println();
         }
