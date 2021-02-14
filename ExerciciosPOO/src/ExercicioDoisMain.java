@@ -6,9 +6,9 @@ public class ExercicioDoisMain {
         Autor autor1 = new Autor("H. P. Lovecraft", "lovecraft@gmail.com", 'm');
         Autor autor2 = new Autor("Edgar Allan Poe", "allanpoe@gmail.com", 'm');
         Autor autor3 = new Autor("Arthur C. Clarke", "arthurclarke@gmail.com", 'm');
-        Livro livro1 = new Livro("Nas Montanhas da Loucura", autor1, 31.99);
+        Livro livro1 = new Livro("Nas Montanhas da Loucura", autor1, 31.99, 8);
         Livro livro2 = new Livro("O Retrato Oval", autor2, 20.99);
-        Livro livro3 = new Livro("O Fim da Infância", autor3, 30.00);
+        Livro livro3 = new Livro("O Fim da Infância", autor3, 30.00, 4);
 
         // Declaração de variáveis
         Scanner scannerNum = new Scanner(System.in);
@@ -60,6 +60,7 @@ public class ExercicioDoisMain {
                         System.out.println(livro3.getNome() + " agora custa R$" + livro3.getPreco());
                         break;
                 }
+                break;
             case 2:
                 System.out.println("De qual livro quer mudar a qtd? Digite o número correspondente à resposta:");
                 System.out.println("1) " + livro1.getNome() + ", que possuímos " + livro1.getQtd() + " unidades");
@@ -89,8 +90,10 @@ public class ExercicioDoisMain {
                         System.out.println(livro3.getNome() + " agora tem " + livro3.getQtd() + " unidades");
                         break;
                 }
+                break;
             case 3:
                 System.out.println("Deixe como está então!");
+                break;
         }
     }
 }
