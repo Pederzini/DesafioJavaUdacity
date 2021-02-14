@@ -1,2 +1,2 @@
-# DesafioJavaUdacity
-Repositório criado para acompanhar minha evolução no curso de Java
+# Projetos Java
+Repositório criado para acompanhar minha evolução na linguagem Java
