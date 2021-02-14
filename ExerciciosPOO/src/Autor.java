@@ -27,9 +27,6 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Informações do autor: \n" +
-                "Nome: " + nome + "\n" +
-                "Email: " + email + "\n" +
-                "Gênero: " + genero + "\n";
+        return "Informações do autor: [Nome: " + nome + ", Email: " + email + ", Gênero: " + genero + "]";
     }
 }
