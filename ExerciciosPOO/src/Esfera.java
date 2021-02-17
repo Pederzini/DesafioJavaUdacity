@@ -1,4 +1,4 @@
-public class Esfera implements Movimento{
+public class Esfera implements Movimento {
     // Atributos:
     Integer distanciaCima;
     Integer distanciaBaixo;

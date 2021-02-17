@@ -43,7 +43,7 @@ public class ExercicioTresMain {
                     }
                 }
                 break;
-                
+
             case 2:
                 movimentar = true;
                 while (movimentar) {
