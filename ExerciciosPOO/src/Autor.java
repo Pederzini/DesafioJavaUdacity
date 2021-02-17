@@ -1,7 +1,7 @@
 public class Autor {
-    private String nome;
+    private final String nome;
     private String email;
-    private Character genero;
+    private final Character genero;
 
     public Autor(String nome, String email, Character genero) {
         this.nome = nome;
@@ -27,6 +27,6 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Informações do autor: [Nome: " + nome + ", Email: " + email + ", Gênero: " + genero + "]";
+        return "Informações do autor: [Nome: " + getNome() + ", Email: " + getEmail() + ", Gênero: " + getGenero() + "]";
     }
 }
