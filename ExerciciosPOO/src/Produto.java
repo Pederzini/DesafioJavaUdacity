@@ -1,6 +1,6 @@
 public class Produto extends ItensVenda {
-    private Integer qtd;
-    private String validade;
+    private final Integer qtd;
+    private final String validade;
 
     public Produto(Double preco, String nome, Integer qtd, String validade) {
         super(preco, nome);

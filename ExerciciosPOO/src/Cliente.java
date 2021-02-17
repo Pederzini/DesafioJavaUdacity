@@ -8,13 +8,14 @@ public class Cliente {
     public Cliente(String nome, String assinatura) {
         this.nome = nome;
         this.assinatura = assinatura;
-        if(this.assinatura.equalsIgnoreCase("Premium")) {
+        if (this.assinatura.equalsIgnoreCase("Premium")) {
             descontoServico = desconto.getPremiumServico();
         } else if (this.assinatura.equalsIgnoreCase("Gold")) {
             descontoServico = desconto.getGoldServico();
         } else if (this.assinatura.equalsIgnoreCase("Silver")) {
             descontoServico = desconto.getSilverServico();
         } else {
+            this.assinatura = "comum";
             descontoServico = desconto.getComumServico();
         }
     }

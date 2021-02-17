@@ -1,5 +1,5 @@
 public class Servico extends ItensVenda {
-    private Double duracaoHoras;
+    private final Double duracaoHoras;
 
     public Servico(Double preco, String nome, Double duracaoHoras) {
         super(preco, nome);

@@ -20,7 +20,6 @@ public class Visita {
     ArrayList<Servico> servicosAdquiridos = new ArrayList<>();
 
     Cliente cliente = new Cliente("Mimzy", "Premium");
-    Cliente cliente2 = new Cliente("Victor Pederzini", "Silver");
 
     // Métodos:
     public void visitar() {
@@ -64,6 +63,8 @@ public class Visita {
                         System.out.println(p);
                     }
                     System.out.println("Você gastou R$" + getTotalProdutos() + " em produtos\n");
+                    System.out.println("Todos os clientes têm desconto de " + cliente.getDescontoProduto() * 100 +
+                            "% em produtos");
                     System.out.println("-------------------------------------\n");
                     System.out.println("Os serviços que adquiriu foram:");
                     System.out.println("-------------------------------------");
@@ -71,8 +72,15 @@ public class Visita {
                         System.out.println(s);
                     }
                     System.out.println("Você gastou R$" + getTotalServicos() + " em serviços\n");
+                    System.out.println(cliente.getNome() + " tem desconto de " +
+                            (cliente.getDescontoServico() * 100) + "% em serviços por ser " +
+                            cliente.getAssinatura());
                     System.out.println("-------------------------------------");
-                    System.out.println("No total, sua conta foi de: R$" + (getTotalServicos() + getTotalProdutos()));
+                    System.out.println("No total, aplicando o desconto de " + cliente.getAssinatura() + " para os serviços " +
+                            "e de " + cliente.getDescontoProduto() * 100 + "% para produtos, sua conta foi de: R$" +
+                            ((getTotalServicos() * (1 - cliente.getDescontoServico())) +
+                                    (getTotalProdutos() * (1 - cliente.getDescontoProduto()))) + ".\nVocê economizou R$" +
+                            ((getTotalServicos() * cliente.getDescontoServico()) + (getTotalProdutos() * cliente.descontoProduto)));
                     queroComprar = false;
                     break;
             }
@@ -87,11 +95,4 @@ public class Visita {
         return totalProdutos;
     }
 
-    public ArrayList<Produto> getProdutosAdquiridos() {
-        return produtosAdquiridos;
-    }
-
-    public ArrayList<Servico> getServicosAdquiridos() {
-        return servicosAdquiridos;
-    }
 }
