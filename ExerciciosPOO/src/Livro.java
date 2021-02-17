@@ -1,9 +1,7 @@
-import java.util.List;
-
 public class Livro {
 
-    private String nome;
-    private Autor autor;
+    private final String nome;
+    private final Autor autor;
     private Double preco;
     private Integer qtd;
 
@@ -47,9 +45,9 @@ public class Livro {
     @Override
     public String toString() {
         return "Informações do Livro:\n" +
-                "Título: " + nome + "\n" +
-                autor.toString() + "\n" +
-                "Preço: R$" + preco + "\n" +
-                "Qtd: " + qtd + "\n";
+                "Título: " + getNome() + "\n" +
+                getAutor().toString() + "\n" +
+                "Preço: R$" + getPreco() + "\n" +
+                "Qtd: " + getQtd() + "\n";
     }
 }
